@@ -33,7 +33,7 @@ export const createCourse = async (req,res) => {
 export const searchCourse = async (req,res) => {
     try {
         const {query = "", categories = [], sortByPrice =""} = req.query;
-        console.log(categories);
+        // console.log(categories);
         
         // create search query
         const searchCriteria = {
@@ -47,10 +47,10 @@ export const searchCourse = async (req,res) => {
 
         // if categories selected
         if(categories.length > 0) {
-            searchCriteria.category = {$in: categories};  // select categories front the given array
+            searchCriteria.category = {$in: categories};  // select categories from the given array
         }
 
-        // define sorting order based on coursePrice propertyof course schema
+        // define sorting order based on coursePrice property of course schema
         const sortOptions = {};
         if(sortByPrice === "low"){
             sortOptions.coursePrice = 1;//sort by price in ascending
