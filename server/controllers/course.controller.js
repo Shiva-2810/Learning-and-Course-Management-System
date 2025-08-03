@@ -174,7 +174,7 @@ export const getCourseById = async (req,res) => {
 export const removeCourse = async(req,res) => {
      try {
         const {courseId} = req.params;
-        console.log("Course ID received:", courseId); //
+        // console.log("Course ID received:", courseId); //
 
         const course = await Course.findByIdAndDelete(courseId);
 
@@ -187,7 +187,6 @@ export const removeCourse = async(req,res) => {
             message:"Course deleted successfully!"
         })
     } catch (error) {
-      
         return res.status(500).json({
             message:"Failed to delete course"
         })

@@ -5,7 +5,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 const Dashboard = () => {
 
-  const {data, isSuccess, isError, isLoading} = useGetPurchasedCoursesQuery();
+  const {data, isError, isLoading} = useGetPurchasedCoursesQuery();
 
   if(isLoading) return <h1>Loading...</h1>
   if(isError) return <h1 className="text-red-500">Failed to get purchased course</h1>
@@ -55,7 +55,7 @@ const Dashboard = () => {
               <XAxis
                 dataKey="name"
                 stroke="#6b7280"
-                angle={-30} // Rotated labels for better visibility
+                angle={0} // Rotated labels for better visibility
                 textAnchor="end"
                 interval={0} // Display all labels
               />

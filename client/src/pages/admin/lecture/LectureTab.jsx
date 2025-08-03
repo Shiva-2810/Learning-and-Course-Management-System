@@ -21,7 +21,7 @@ const MEDIA_API = "http://localhost:8080/api/v1/media";
 
 const LectureTab = () => {
   const [lectureTitle, setLectureTitle] = useState("");
-  const [uploadVideInfo, setUploadVideoInfo] = useState(null);
+  const [uploadVideoInfo, setUploadVideoInfo] = useState(null);
   const [isFree, setIsFree] = useState(false);
   const [mediaProgress, setMediaProgress] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -76,11 +76,11 @@ const LectureTab = () => {
   };
 
   const editLectureHandler = async () => {
-    console.log({ lectureTitle, uploadVideInfo, isFree, courseId, lectureId });
+    console.log({ lectureTitle, uploadVideoInfo, isFree, courseId, lectureId });
 
     await editLecture({
       lectureTitle,
-      videoInfo:uploadVideInfo,
+      videoInfo:uploadVideoInfo,
       isPreviewFree:isFree,
       courseId,
       lectureId,
@@ -116,7 +116,7 @@ const LectureTab = () => {
           </CardDescription>
         </div>
         <div className="flex items-center gap-2">
-          <Button disbaled={removeLoading} variant="destructive" onClick={removeLectureHandler}>
+          <Button disabled={removeLoading} variant="destructive" onClick={removeLectureHandler}>
             {
               removeLoading ? <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin"/>

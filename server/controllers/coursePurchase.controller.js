@@ -23,14 +23,14 @@ export const createCheckoutSession = async (req, res) => {
             currency: "inr",
             product_data: {
               name: course.courseTitle,
-              images: [course.courseThumbnail],
+              images: [course.courseThumbnail], // expects array multiple images for a single project
             },
             unit_amount: course.coursePrice * 100,
           },
           quantity: 1,
         },
       ],
-      mode: "payment",
+      mode: "payment", // payment for one time and subscription for recurring
       success_url: 'http://localhost:5173/payment-success?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: `http://localhost:5173/course-detail/${courseId}`,
       metadata: {

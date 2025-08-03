@@ -91,7 +91,7 @@ const CourseProgress = () => {
               <CheckCircle className="h-4 w-4 mr-2" /> <span>Completed</span>{" "}
             </div>
           ) : (
-            "Mark as completed"
+            "Mark as complete"
           )}
         </Button>
       </div>
