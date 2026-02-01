@@ -333,7 +333,7 @@ export const getLectureById = async (req,res) => {
 }
 
 
-// publich unpublish course logic
+// publish unpublish course logic
 
 export const togglePublishCourse = async (req,res) => {
     try {

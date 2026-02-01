@@ -31,7 +31,7 @@ export const createCheckoutSession = async (req, res) => {
         },
       ],
       mode: "payment", // payment for one time and subscription for recurring
-      success_url: 'http://localhost:5173/payment-success?session_id={CHECKOUT_SESSION_ID}',
+      success_url: `http://localhost:5173/payment-success?session_id=${session.id}`,
       cancel_url: `http://localhost:5173/course-detail/${courseId}`,
       metadata: {
         courseId,
@@ -154,7 +154,7 @@ export const getAllPurchasedCourse = async (_, res) => {
   try {
     const purchasedCourse = await CoursePurchase.find({
       status: "completed",
-    }).populate("courseId");
+    }) .populate("courseId");
     if (!purchasedCourse) {
       return res.status(404).json({
         purchasedCourse: [],
