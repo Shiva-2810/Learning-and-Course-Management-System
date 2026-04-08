@@ -17,7 +17,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
 
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL='https://learning-and-course-management-system-2.onrender.com';
 const MEDIA_API = `${VITE_API_URL}/api/v1/media`;
 
 const LectureTab = () => {
