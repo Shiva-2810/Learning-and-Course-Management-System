@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const VITE_API_URL='https://learning-and-course-management-system-2.onrender.com';
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 const COURSE_API = `${VITE_API_URL}/api/v1/course`;
 
 export const courseApi = createApi({
