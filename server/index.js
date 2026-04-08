@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(cors({
      origin: [
     "http://localhost:5173",
-    "https://learning-and-course-management-syst.vercel.app"
+    "https://learning-and-course-management-syst-gamma.vercel.app"
   ],
     credentials:true
 }));
